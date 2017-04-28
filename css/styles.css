@@ -1,0 +1,16 @@
+.header-container {
+  background-color: black;
+}
+
+.footer-container {
+  background-color: black;
+}
+
+.body-container {
+  background-image: url('/images/paper-bg.png');
+}
+
+.form-container {
+  background-color: white;
+  width:50%;
+}
