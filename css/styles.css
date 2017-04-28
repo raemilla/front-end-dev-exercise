@@ -1,24 +1,13 @@
+/*main css - mobile first*/
+
 body {
   margin:0;
   background-image: url('/images/paper-bg.png');
 }
 
+/*header css*/
 .header-container {
   background-color: black;
-}
-
-.footer-container {
-  background-color: black;
-  text-align: center;
-}
-
-.form-container {
-  background-color: white;
-  width:60%;
-  margin:auto;
-  text-align: center;
-  box-shadow: 1px 1px 5px #888888;
-  border-radius: 3px;
 }
 
 #logo {
@@ -29,7 +18,63 @@ body {
   padding:4%;
 }
 
-ul > li {
-  list-style: none;
-  color:white;
+/*footer css*/
+.footer-container {
+  background-color: black;
+  text-align: center;
 }
+
+ul {
+  padding: 1%;
+}
+
+ul > li {
+  font-family: 'Lato';
+  list-style: none;
+  font-size:10px;
+}
+
+a {
+  text-decoration: none;
+  color: #008484;
+}
+
+/*form css*/
+.form-container {
+  background-color: white;
+  width:60%;
+  margin:auto;
+  text-align: center;
+  box-shadow: 1px 1px 5px #888888;
+  border-radius: 3px;
+}
+
+.form-container > h1 {
+  font-family: 'Brandon Grotesque';
+  padding-top:10%;
+}
+
+form > input {
+  font-family: 'Lato';
+  width:50%;
+  padding: 1%;
+  margin: 1%;
+}
+
+#submit {
+  font-family: 'Brandon Grotesque';
+  color:white;
+  background-color: #e58a1f;
+  border:none;
+  border-radius: 2px;
+  padding:7px;
+  margin:7%;
+  width:25%;
+}
+
+.state-selector {
+  width:51%;
+}
+
+
+/*media queries*/
