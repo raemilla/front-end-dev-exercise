@@ -1,16 +1,35 @@
+body {
+  margin:0;
+  background-image: url('/images/paper-bg.png');
+}
+
 .header-container {
   background-color: black;
 }
 
 .footer-container {
   background-color: black;
-}
-
-.body-container {
-  background-image: url('/images/paper-bg.png');
+  text-align: center;
 }
 
 .form-container {
   background-color: white;
-  width:50%;
+  width:60%;
+  margin:auto;
+  text-align: center;
+  box-shadow: 1px 1px 5px #888888;
+  border-radius: 3px;
+}
+
+#logo {
+  display:block;
+  margin: auto;
+  width: 40%;
+  height:auto;
+  padding:4%;
+}
+
+ul > li {
+  list-style: none;
+  color:white;
 }
