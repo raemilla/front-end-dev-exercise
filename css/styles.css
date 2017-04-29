@@ -1,14 +1,18 @@
 /*main css - mobile first*/
+html {
+  height: 100%;
+}
 
 body {
   margin:0;
   background-image: url('/images/paper-bg.png');
+  position: relative;
+  padding-bottom: 500px;
 }
 
 /*header css*/
 .header-container {
   background-color: black;
-  height: 220px;
 }
 
 #logo {
@@ -23,7 +27,6 @@ body {
 .footer-container {
   background-color: black;
   text-align: center;
-  height:250px;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -37,7 +40,7 @@ ul {
 ul > li {
   font-family: 'Lato';
   list-style: none;
-  font-size:30px;
+  font-size:37px;
 }
 
 a {
@@ -54,7 +57,7 @@ a {
   text-align: center;
   box-shadow: 1px 1px 5px #888888;
   border-radius: 3px;
-  margin-top: 10%;
+  margin-top: 16%;
 }
 
 .form-container > h1 {
@@ -82,9 +85,7 @@ form > input, .state-selector {
 
 .state-selector {
   width: 82%;
-  background-image: url('/images/arrow-down.svg') no-repeat;
 }
-
 
 #submit {
   font-family: 'Brandon Grotesque';
@@ -96,7 +97,6 @@ form > input, .state-selector {
   width:45%;
   padding: 28px 0;
   letter-spacing: 1px;
-  outline: none;
 }
 
 
