@@ -8,6 +8,7 @@ body {
 /*header css*/
 .header-container {
   background-color: black;
+  height: 220px;
 }
 
 #logo {
@@ -15,23 +16,28 @@ body {
   margin: auto;
   width: 40%;
   height:auto;
-  padding:4%;
+  padding:7%;
 }
 
 /*footer css*/
 .footer-container {
   background-color: black;
   text-align: center;
+  height:250px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 ul {
-  padding: 1%;
+  padding: 6%;
 }
 
 ul > li {
   font-family: 'Lato';
   list-style: none;
-  font-size:10px;
+  font-size:30px;
 }
 
 a {
@@ -42,38 +48,55 @@ a {
 /*form css*/
 .form-container {
   background-color: white;
-  width:60%;
+  width:80%;
+  height: 900px;
   margin:auto;
   text-align: center;
   box-shadow: 1px 1px 5px #888888;
   border-radius: 3px;
+  margin-top: 10%;
 }
 
 .form-container > h1 {
   font-family: 'Brandon Grotesque';
-  padding-top:10%;
+  padding-top:11%;
+  font-size: 55px;
+  letter-spacing: 3px;
+  color: #85754e;
 }
 
-form > input {
-  font-family: 'Lato';
-  width:50%;
-  padding: 1%;
-  margin: 1%;
+form {
+  margin-top: 7%;
 }
+
+form > input, .state-selector {
+  font-family: 'Lato';
+  width:80%;
+  padding: 1.5%;
+  margin: 2%;
+  font-size: 40px;
+  background-color: #f7fbf7;
+  border:1px solid #d7d7d6;
+  border-radius: 3px;
+}
+
+.state-selector {
+  width: 82%;
+  background-image: url('/images/arrow-down.svg') no-repeat;
+}
+
 
 #submit {
   font-family: 'Brandon Grotesque';
   color:white;
   background-color: #e58a1f;
   border:none;
-  border-radius: 2px;
-  padding:7px;
-  margin:7%;
-  width:25%;
-}
-
-.state-selector {
-  width:51%;
+  border-radius: 6px;
+  margin-top:8%;
+  width:45%;
+  padding: 28px 0;
+  letter-spacing: 1px;
+  outline: none;
 }
 
 
