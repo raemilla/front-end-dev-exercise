@@ -84,6 +84,7 @@ form > input, .state-selector {
   padding: 1.5%;
   margin: 2%;
   font-size: 15px;
+  /*color: rgba(219,221,218, 0.9);*/
   background-color: #f7fbf7;
   border:1px solid #d7d7d6;
   border-radius: 3px;
@@ -94,6 +95,9 @@ form > input, .state-selector {
 
 .state-selector {
   width: 83.75%;
+  background: url('/images/arrow-down.svg') no-repeat right #f7fbf7;
+  -webkit-appearance: none;
+  background-position-x: 95%;
 }
 
 #submit {
@@ -133,8 +137,12 @@ form > input, .state-selector {
     margin-top: 10%;
   }
 
-  form > input, .state-selector {
+  form > input {
     width: 60%;
+  }
+
+  .state-selector {
+    width: 62%;
   }
 
   #submit {

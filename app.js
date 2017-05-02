@@ -14,12 +14,12 @@ $(document).ready(function() {
         $(input).css("border-color", "green");
       } else {
         $(input).css("border-color", "red");
-        $(input).after("<span style='color:red;font-size:10px;'>Must be a valid email.</span>")
+        $(input).after("<span class='invalid' style='color:red;font-size:10px;'>Must be a valid email.</span>")
       }
     } else {
       if (data === "") {
         $(input).css("border-color","red");
-        $(input).after("<span style='color:red;font-size:10px;'>Must not be blank.</span>");
+        $(input).after("<span class='invalid' style='color:red;font-size:10px;'>Must not be blank.</span>");
       } else {
         $(input).css("border-color", "green");
       }
