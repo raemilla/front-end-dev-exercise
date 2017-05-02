@@ -1,42 +1,62 @@
 $(document).ready(function() {
 
+  function emailValidation(email) {
+    var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var validEmail = re.test(email);
+    return validEmail
+  }
+
   function validation(input) {
     var data = $(input).val();
-    var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    var validEmail = re.test(data);
 
-    if (input === ".email") {
-      if (validEmail) {
+    if ( $(input).hasClass('email') ) {
+      if ( emailValidation(data) ) {
         $(input).css("border-color", "green");
       } else {
         $(input).css("border-color", "red");
-        $(input).after("<p>Must be a valid email.</p>")
+        $(input).after("<span style='color:red;font-size:10px;'>Must be a valid email.</span>")
       }
     } else {
       if (data === "") {
-        console.log("This name is empty!");
         $(input).css("border-color","red");
-        $(input).after("<p>Must not be blank.</p>");
+        $(input).after("<span style='color:red;font-size:10px;'>Must not be blank.</span>");
       } else {
         $(input).css("border-color", "green");
       }
     }
   }
 
-  $('.first-name').focusout(function() {
+  $('form').on('focusout','input', function(){
     validation(this);
   });
 
-  $('.last-name').focusout(function() {
-    validation(this);
-  });
-
-  $('.email').focusout(function() {
-    validation('.email');
-  });
+  $('form').on('focusin', 'input', function(){
+    $('span').remove();
+  })
 
   $('form').submit(function(e) {
     e.preventDefault();
-    console.log("stop");
-  })
+    var data = $(this).serializeArray();
+    // var valid = false;
+    var invalidArray = [];
+
+    data.map(function(input){
+      if (input.value === "") {
+        invalidArray.push(input.name);
+      } else if (input.name === "email" && !emailValidation(input.value) ) {
+        invalidArray.push(input.name);
+      }
+    });
+
+    if (invalidArray.length > 0 ) {
+      alert(
+        "Please fix one or more fields before submitting: " + invalidArray
+      );
+    } else {
+      data.map(function(input) {
+        console.log(input.name + ": " + input.value);
+      });
+    }
+  });
+
 });
