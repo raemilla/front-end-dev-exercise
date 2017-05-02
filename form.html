@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <link rel="stylesheet" href="css/fonts.css">
+      <link rel="stylesheet" href="css/styles.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="app.js"></script>
+      <title>WCS Bronx Zoo Form Submission</title>
+    </head>
+    <body>
+
+      <div class='header-container'>
+        <img id='logo' src='images/logo-bronxzoo.png'>
+      </div>
+
+      <div class='body-container'>
+        <div class='form-container'>
+          <h1 style="">FORM TITLE</h1>
+          <form>
+            <input type='text' name='firstname' placeholder='First Name' class="first-name"><br>
+            <input type='text' name='lastname' placeholder='Last Name' class='last-name'><br>
+            <input type='text' name='email' placeholder='Email' class='email'><br>
+            <span id="arrow"></span>
+            <select name="state" class='state-selector'>
+              <option value="" default selected>State</option>
+              <option value="NY">NY</option>
+              <option value="CA">CA</option>
+              <option value="TX">TX</option>
+            </select><br>
+            <input id='submit' type='submit' value='SUBMIT'>
+          </form>
+        </div>
+      </div>
+
+      <div class='footer-container'>
+        <ul>
+          <li><a href='#'>Terms & Conditions</a></li>
+          <li><a href='#'>Privacy Policy</a></li>
+        </ul>
+      </div>
+    </body>
+</html>
