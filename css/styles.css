@@ -70,6 +70,25 @@ form {
   margin-top: 7%;
 }
 
+/*.double-border {
+  border-radius: 3px;
+  border: 1px solid red;
+  width:80%;
+  padding: 1.5%;
+  margin: 2%;
+}*/
+
+/*form > input:before {
+  content: " ";
+  position: absolute;
+  z-index: -2;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 5px solid red;
+}*/
+
 form > input, .state-selector {
   font-family: 'Lato';
   width:80%;
@@ -79,6 +98,9 @@ form > input, .state-selector {
   background-color: #f7fbf7;
   border:1px solid #d7d7d6;
   border-radius: 3px;
+  box-shadow:
+    0 0 0 2px white,
+    0 0 0 3px rgba(219,221,218, 0.3);
 }
 
 .state-selector {
@@ -95,6 +117,7 @@ form > input, .state-selector {
   width:45%;
   padding: 10px 0;
   letter-spacing: 1px;
+  box-shadow: none;
 }
 
 

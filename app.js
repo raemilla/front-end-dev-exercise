@@ -30,9 +30,9 @@ $(document).ready(function() {
     validation(this);
   });
 
-  $('form').on('focusin', 'input', function(){
-    $('span').remove();
-  })
+  // $('form').on('focusin', 'input', function(){
+  //   $('span').remove();
+  // })
 
   $('form').submit(function(e) {
     e.preventDefault();
