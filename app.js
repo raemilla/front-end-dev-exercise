@@ -14,12 +14,12 @@ $(document).ready(function() {
         $(input).css("border-color", "green");
       } else {
         $(input).css("border-color", "red");
-        $(input).after("<span class='invalid' style='color:red;font-size:10px;'>Must be a valid email.</span>")
+        $(input).after("<p class='invalid' style='color:red;font-size:10px;'>Must be a valid email.</p>");
       }
     } else {
       if (data === "") {
         $(input).css("border-color","red");
-        $(input).after("<span class='invalid' style='color:red;font-size:10px;'>Must not be blank.</span>");
+        $(input).after("<p class='invalid' style='color:red;font-size:10px;'>Must not be blank.</p>");
       } else {
         $(input).css("border-color", "green");
       }
@@ -30,14 +30,13 @@ $(document).ready(function() {
     validation(this);
   });
 
-  // $('form').on('focusin', 'input', function(){
-  //   $('span').remove();
-  // })
+  $('form').on('focusin', 'input', function(){
+    $(this).next('p').remove();
+  });
 
   $('form').submit(function(e) {
     e.preventDefault();
     var data = $(this).serializeArray();
-    // var valid = false;
     var invalidArray = [];
 
     data.map(function(input){
