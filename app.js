@@ -1,5 +1,21 @@
 $(document).ready(function() {
 
+  function invalidError(array) {
+    var string = "";
+    for (i = 0; i < array.length; i++) {
+      if (array[i] === "firstname") {
+        string += "first name, ";
+      } else if (array[i] === "lastname") {
+        string += "last name, ";
+      } else if (i === (array.length - 1)){
+        string += array[i] + ".";
+      } else {
+        string += array[i] + ", ";
+      }
+    }
+    return string;
+  }
+
   function emailValidation(email) {
     var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     var validEmail = re.test(email);
@@ -48,9 +64,9 @@ $(document).ready(function() {
     });
 
     if (invalidArray.length > 0 ) {
+      var string =
       alert(
-        "Please fix one or more fields before submitting: " + invalidArray
-      );
+        "Please fix one or more fields before submitting: " + invalidError(invalidArray));
     } else {
       data.map(function(input) {
         console.log(input.name + ": " + input.value);
