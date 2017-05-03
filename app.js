@@ -1,5 +1,21 @@
 $(document).ready(function() {
 
+  function invalidError(array) {
+    var string = "";
+    for (i = 0; i < array.length; i++) {
+      if (array[i] === "firstname") {
+        string += "first name";
+        string += " is required. "
+      } else if (array[i] === "lastname") {
+        string += "last name";
+        string += " is required. "
+      } else if (i === (array.length - 1)){
+        string += array[i] + " is required.";
+      }
+    }
+    return string;
+  }
+
   function emailValidation(email) {
     var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     var validEmail = re.test(email);
@@ -14,12 +30,12 @@ $(document).ready(function() {
         $(input).css("border-color", "green");
       } else {
         $(input).css("border-color", "red");
-        $(input).after("<span style='color:red;font-size:10px;'>Must be a valid email.</span>")
+        $(input).after("<p class='invalid' style='color:red;font-size:10px;'>Must be a valid email.</p>");
       }
     } else {
       if (data === "") {
         $(input).css("border-color","red");
-        $(input).after("<span style='color:red;font-size:10px;'>Must not be blank.</span>");
+        $(input).after("<p class='invalid' style='color:red;font-size:10px;'>Must not be blank.</p>");
       } else {
         $(input).css("border-color", "green");
       }
@@ -31,17 +47,16 @@ $(document).ready(function() {
   });
 
   $('form').on('focusin', 'input', function(){
-    $('span').remove();
-  })
+    $(this).next('p').remove();
+  });
 
   $('form').submit(function(e) {
     e.preventDefault();
     var data = $(this).serializeArray();
-    // var valid = false;
     var invalidArray = [];
 
     data.map(function(input){
-      if (input.value === "") {
+      if (input.value === "" && input.name !== "state") {
         invalidArray.push(input.name);
       } else if (input.name === "email" && !emailValidation(input.value) ) {
         invalidArray.push(input.name);
@@ -49,9 +64,8 @@ $(document).ready(function() {
     });
 
     if (invalidArray.length > 0 ) {
-      alert(
-        "Please fix one or more fields before submitting: " + invalidArray
-      );
+      var string =
+      alert("Please fix one or more fields before submitting: " + invalidError(invalidArray));
     } else {
       data.map(function(input) {
         console.log(input.name + ": " + input.value);
