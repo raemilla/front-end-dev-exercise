@@ -4,13 +4,13 @@ $(document).ready(function() {
     var string = "";
     for (i = 0; i < array.length; i++) {
       if (array[i] === "firstname") {
-        string += "first name, ";
+        string += "first name";
+        string += " is required. "
       } else if (array[i] === "lastname") {
-        string += "last name, ";
+        string += "last name";
+        string += " is required. "
       } else if (i === (array.length - 1)){
-        string += array[i] + ".";
-      } else {
-        string += array[i] + ", ";
+        string += array[i] + " is required.";
       }
     }
     return string;
@@ -56,7 +56,7 @@ $(document).ready(function() {
     var invalidArray = [];
 
     data.map(function(input){
-      if (input.value === "") {
+      if (input.value === "" && input.name !== "state") {
         invalidArray.push(input.name);
       } else if (input.name === "email" && !emailValidation(input.value) ) {
         invalidArray.push(input.name);
@@ -65,8 +65,7 @@ $(document).ready(function() {
 
     if (invalidArray.length > 0 ) {
       var string =
-      alert(
-        "Please fix one or more fields before submitting: " + invalidError(invalidArray));
+      alert("Please fix one or more fields before submitting: " + invalidError(invalidArray));
     } else {
       data.map(function(input) {
         console.log(input.name + ": " + input.value);
